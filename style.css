@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: hsl(213,55%,94%);
+    display: grid;
+    place-items: center;
+}
+.center{
+    width: 60%;
+    height: 42rem;
+    background: silver;
+    border-radius: 2rem;
+    position: relative;
+}
+.clip{
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    top: 0;
+    left: 0;
+    border-radius: 2rem;
+    transition: all 0.5s linear;
+}
+.img1{
+    background-image: url(blue.jpg);
+    background-size: contain;
+    background-position: left;
+    clip-path: polygon(0 0, 26% 0, 43% 100%, 0 100%);
+}
+.img2{
+    background-image: url(dark.jpg);
+    background-size: contain;
+    background-position: center;
+    clip-path: polygon(21% 0, 79% 0, 61% 100%, 39% 100%);
+
+}
+.img3{
+    background-image: url(red.jpg);
+    background-size: contain;
+    background-position: right;
+    clip-path: polygon(75% 0, 100% 0, 100% 100%, 55% 100%);
+}
+    .center:hover .clip{
+        clip-path: polygon(0 0, 100% 0, 0 0, 0 0);
+        background-size: cover;
+        background-position: center;
+    }
+.center .clip:hover{
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+}
